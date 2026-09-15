@@ -1,0 +1,15 @@
+C:\Users\DenovanCalill\RiderProjects\TaskMaster_ToDoLy\TaskMaster_ToDoLy\bin\Debug\net10.0\TaskMaster_ToDoLy.exe
+C:\Users\DenovanCalill\RiderProjects\TaskMaster_ToDoLy\TaskMaster_ToDoLy\bin\Debug\net10.0\TaskMaster_ToDoLy.deps.json
+C:\Users\DenovanCalill\RiderProjects\TaskMaster_ToDoLy\TaskMaster_ToDoLy\bin\Debug\net10.0\TaskMaster_ToDoLy.runtimeconfig.json
+C:\Users\DenovanCalill\RiderProjects\TaskMaster_ToDoLy\TaskMaster_ToDoLy\bin\Debug\net10.0\TaskMaster_ToDoLy.dll
+C:\Users\DenovanCalill\RiderProjects\TaskMaster_ToDoLy\TaskMaster_ToDoLy\bin\Debug\net10.0\TaskMaster_ToDoLy.pdb
+C:\Users\DenovanCalill\RiderProjects\TaskMaster_ToDoLy\TaskMaster_ToDoLy\obj\Debug\net10.0\TaskMaster_ToDoLy.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DenovanCalill\RiderProjects\TaskMaster_ToDoLy\TaskMaster_ToDoLy\obj\Debug\net10.0\TaskMaster_ToDoLy.AssemblyInfoInputs.cache
+C:\Users\DenovanCalill\RiderProjects\TaskMaster_ToDoLy\TaskMaster_ToDoLy\obj\Debug\net10.0\TaskMaster_ToDoLy.AssemblyInfo.cs
+C:\Users\DenovanCalill\RiderProjects\TaskMaster_ToDoLy\TaskMaster_ToDoLy\obj\Debug\net10.0\TaskMaster_ToDoLy.csproj.CoreCompileInputs.cache
+C:\Users\DenovanCalill\RiderProjects\TaskMaster_ToDoLy\TaskMaster_ToDoLy\obj\Debug\net10.0\TaskMaster_ToDoLy.sourcelink.json
+C:\Users\DenovanCalill\RiderProjects\TaskMaster_ToDoLy\TaskMaster_ToDoLy\obj\Debug\net10.0\TaskMaster_ToDoLy.dll
+C:\Users\DenovanCalill\RiderProjects\TaskMaster_ToDoLy\TaskMaster_ToDoLy\obj\Debug\net10.0\refint\TaskMaster_ToDoLy.dll
+C:\Users\DenovanCalill\RiderProjects\TaskMaster_ToDoLy\TaskMaster_ToDoLy\obj\Debug\net10.0\TaskMaster_ToDoLy.pdb
+C:\Users\DenovanCalill\RiderProjects\TaskMaster_ToDoLy\TaskMaster_ToDoLy\obj\Debug\net10.0\TaskMaster_ToDoLy.genruntimeconfig.cache
+C:\Users\DenovanCalill\RiderProjects\TaskMaster_ToDoLy\TaskMaster_ToDoLy\obj\Debug\net10.0\ref\TaskMaster_ToDoLy.dll

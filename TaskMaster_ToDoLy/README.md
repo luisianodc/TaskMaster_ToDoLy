@@ -1,19 +1,15 @@
 # TaskMaster - ToDoLy
 
-C# .NET 8 console application based on the supplied ToDoLy project brief.
+C# .NET 8 console application implementing the ToDoLy requirements.
 
-## Requirements implemented
-
-- Task model: title, due date, status and project
-- Display tasks sorted by date or project
+Features:
+- Task title, due date, status and project
+- Sort by date or project
 - Add, edit, mark done/undone and remove tasks
-- Text-based command-line interface
-- Save/load task list as JSON
-- First launch starts with an empty task list so the user can create their own tasks
+- JSON save/load
+- Empty list on first launch; no sample tasks
+- Cancel/back option during every operation
+- Quit without saving, with confirmation
+- XML documentation comments in all C# files
 
-## Visual Studio
-
-Open `TaskMaster.csproj` in Visual Studio 2022 with the .NET 8 SDK installed.
-Run with F5 or Ctrl+F5.
-
-When selecting Save and Quit, the application writes `ToDoList.json` to the current directory.
+Open `TaskMaster.csproj` in Visual Studio 2022 with the .NET 8 SDK and run with F5 or Ctrl+F5.

@@ -1,6 +1,6 @@
-﻿namespace TaskMaster_ToDoLy;
+using System.Text.Json;
 
-public class FileHandler
+namespace TaskMaster;
+public static class FileHandler
 {
-    
 }
