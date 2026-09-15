@@ -13,9 +13,9 @@ Features:
 - XML documentation comments in all C# files
 
 Open `TaskMaster.csproj` in Visual Studio 2022 with the .NET 8 SDK and run with F5 or Ctrl+F5.
-git commit -m "testar git commands. did not update on github after commit, add & push"    
+
 
 git add .
-
+git commit -m "most recent changes"    
 git push -u origin main   
 git pull origin main --allow-unrelated-histories
