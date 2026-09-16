@@ -16,6 +16,6 @@ Open `TaskMaster.csproj` in Visual Studio 2022 with the .NET 8 SDK and run with 
 
 
 git add .
-git commit -m "most recent changes"    
+git commit -m "added operations to ApplicationUI"    
 git push -u origin main   
 git pull origin main --allow-unrelated-histories
