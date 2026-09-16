@@ -1,5 +1,24 @@
 # TaskMaster_ToDoLy
 
+## C# .NET 8 console application implementing the ToDoLy requirements.
+
+## Features:
+###(
+- Task title, due date, status and project
+- Sort by date or project
+- Add, edit, mark done/undone and remove tasks
+- JSON save/load
+- Empty list on first launch; no sample tasks
+- Cancel/back option during every operation
+- Quit without saving, with confirmation
+- XML documentation comments in all C# files
+- )
+
+
+
+
+
+
 
 ## Flödesdiagram
 ###
