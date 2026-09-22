@@ -237,7 +237,8 @@ Program
 
 
 ## Screenshot Main Menu
-<img width="310" height="172" alt="amainmenu" src="https://github.com/user-attachments/assets/5efed177-1901-4b1a-9316-d03226ffaa2b" />
+<img width="424" height="201" alt="mainmenu" src="https://github.com/user-attachments/assets/b1dddbad-a3e9-44ac-9574-c181d752400f" />
+
 
 ## Screenshot Show tasks Menu
 <img width="315" height="150" alt="ashowmenu" src="https://github.com/user-attachments/assets/c21e26ed-2333-44ec-8bbc-79aefc7f5508" />
