@@ -1,4 +1,4 @@
-﻿namespace TaskMaster;
+﻿namespace TaskMaster_ToDoLy;
 
 
 // Stores the application's current collection of tasks.
