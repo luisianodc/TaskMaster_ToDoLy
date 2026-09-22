@@ -47,7 +47,7 @@ public static class ApplicationUi
         Console.WriteLine("(4) Save and Exit");
         Console.WriteLine("(5) Exit without Saving");
         Console.WriteLine("ENTER A NUMBER FROM 1 TO 5");
-        Console.Write("---:");
+        Console.Write("===> : ");
     }
 
 
@@ -62,8 +62,7 @@ public static class ApplicationUi
             Console.WriteLine("(2) Sort by project");
             Console.WriteLine("(0) Back to Main Menu");
             Console.WriteLine();
-
-            Console.Write("---: ");
+            Console.Write("===> : ");
 
             var choice = Console.ReadLine();
 
@@ -73,14 +72,9 @@ public static class ApplicationUi
                 IEnumerable<Task> tasks;
 
                 if (choice == "2")
-                    tasks = TaskList.Tasks
-                        .OrderBy(
-                            task => task.Project,
-                            StringComparer.OrdinalIgnoreCase)
-                        .ThenBy(task => task.DueDate);
+                    tasks = TaskList.Tasks.OrderBy(task => task.Project, StringComparer.OrdinalIgnoreCase).ThenBy(task => task.DueDate);
                 else
-                    tasks = TaskList.Tasks
-                        .OrderBy(task => task.DueDate);
+                    tasks = TaskList.Tasks.OrderBy(task => task.DueDate);
 
                 Console.WriteLine();
                 PrintTasks(tasks);
@@ -210,8 +204,7 @@ public static class ApplicationUi
         Console.WriteLine("(3) Remove task");
         Console.WriteLine("(0) Cancel and return to Main Menu");
         Console.WriteLine();
-
-        Console.Write("---: ");
+        Console.Write("===> : ");
 
         var choice = Console.ReadLine();
 
@@ -303,8 +296,17 @@ public static class ApplicationUi
     //<param name="task">The task to remove.</param>
     private static void RemoveTask(Task task)
     {
-        TaskList.Tasks.Remove(task);
-        WriteLineInColor(ConsoleColor.Green, "Task removed.");
+        WriteLineInColor(ConsoleColor.Yellow, "WARNING: You are about to delete a task.");
+        WriteLineInColor(ConsoleColor.Blue, "Are you sure you want to delete this task (y/n): ");
+        var answer = Console.ReadLine();
+
+        if (answer?.Equals("y", StringComparison.OrdinalIgnoreCase) == true)
+        {
+            TaskList.Tasks.Remove(task);
+            WriteLineInColor(ConsoleColor.Green, "Task removed.");
+            
+        }
+        
         Pause();
     }
 
