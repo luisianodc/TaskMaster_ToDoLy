@@ -11,7 +11,7 @@ internal static class Program
     /// the in-memory task list before ApplicationUi.Start handles all user interaction.
     private static void Main()
     {
-        FileHandler.Open();
+        
         ApplicationUi.Start();
     }
 }

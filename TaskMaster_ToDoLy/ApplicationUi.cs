@@ -16,6 +16,7 @@ public static class ApplicationUi
     public static void Start()
     {
         DisplayHeader();
+        FileHandler.Open();
         while (true)
         {
             DisplayMenu();
