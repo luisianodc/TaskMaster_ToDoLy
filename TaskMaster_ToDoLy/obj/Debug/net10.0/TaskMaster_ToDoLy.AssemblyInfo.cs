@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TaskMaster_ToDoLy")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+41eac96dfede319a9ca2b8de42850e898f407751")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9dc83b2f94748eb7352ad0037a21da10ff084dde")]
 [assembly: System.Reflection.AssemblyProductAttribute("TaskMaster_ToDoLy")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TaskMaster_ToDoLy")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

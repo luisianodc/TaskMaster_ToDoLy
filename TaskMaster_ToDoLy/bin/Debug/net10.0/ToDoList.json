@@ -1,0 +1,38 @@
+[
+  {
+    "Title": "Do dishes",
+    "DueDate": "2026-02-20T00:00:00",
+    "IsDone": false,
+    "Project": "Chores"
+  },
+  {
+    "Title": "Take out trash",
+    "DueDate": "2026-02-22T00:00:00",
+    "IsDone": true,
+    "Project": "Chores"
+  },
+  {
+    "Title": "Read a book",
+    "DueDate": "2026-03-25T00:00:00",
+    "IsDone": false,
+    "Project": "Personal"
+  },
+  {
+    "Title": "Mini Project",
+    "DueDate": "2026-02-16T00:00:00",
+    "IsDone": true,
+    "Project": "C# .NET"
+  },
+  {
+    "Title": "Individual Project",
+    "DueDate": "2026-02-22T00:00:00",
+    "IsDone": true,
+    "Project": "C# .NET"
+  },
+  {
+    "Title": "HTML \u0026 CSS",
+    "DueDate": "2026-02-25T00:00:00",
+    "IsDone": false,
+    "Project": "C# .NET"
+  }
+]

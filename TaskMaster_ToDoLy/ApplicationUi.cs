@@ -1,9 +1,18 @@
 namespace TaskMaster_ToDoLy;
 
-//Provides the text-based user interface for the ToDoLy application.
+/// Handles the console-based menu and user interactions for the ToDoLy app.
+/// Displays tasks, accepts input for adding and editing entries, and confirms save/exit choices.
+/// Validates user actions and keeps the workflow guided for task management operations.
+/// Serves as the main UI layer between the user and the task data model.
 public static class ApplicationUi
 {
-    //Starts the main menu and handles user selections.
+    /// Starts the main program loop for the TaskMaster ToDoLy console app.
+    /// It is used immediately after the saved data is loaded in the application entry point,
+    /// and it runs continuously throughout the session while the user chooses menu actions like
+    /// viewing tasks, adding entries, editing details, saving, or exiting the app.
+    /// Starts the application's main console loop after task data has been loaded.
+    /// It is called once by Program and continues running until the user exits,
+    /// dispatching each menu selection to the appropriate task-management method.
     public static void Start()
     {
         DisplayHeader();
@@ -36,8 +45,9 @@ public static class ApplicationUi
         }
     }
 
-
-    //Displays the main application menu.
+    /// Displays the main menu and its available task-management commands.
+    /// Start calls this method once at the beginning of every menu-loop iteration,
+    /// so it normally runs repeatedly throughout the application session.
     private static void DisplayMenu()
     {
         Console.WriteLine("");
@@ -49,9 +59,10 @@ public static class ApplicationUi
         Console.WriteLine("ENTER A NUMBER FROM 1 TO 5");
         Console.Write("===> : ");
     }
-
-
-    // Displays the task list and allows the user to select a sort order.
+    
+    /// Displays tasks sorted by date or project and allows the user to return to the main menu.
+    /// Start calls this method whenever the user selects the task-list option, so it may run
+    /// multiple times during a session and once per completed list-view action.
     private static void ShowTaskList()
     {
         while (true)
@@ -86,9 +97,10 @@ public static class ApplicationUi
         }
     }
 
-
-    //Prints the supplied tasks in a formatted table.
-    //<param name="tasks">The tasks to display.</param>
+    /// Prints the supplied tasks as a numbered, formatted console table.
+    /// It is used by ShowTaskList and EditTask whenever tasks must be displayed,
+    /// and it runs once for each list-view or edit-screen display.
+    /// <param name="tasks">The tasks to display.</param>
     private static void PrintTasks(IEnumerable<Task> tasks)
     {
         Console.WriteLine("");
@@ -127,21 +139,22 @@ public static class ApplicationUi
 
         if (number == 1) Console.WriteLine("No tasks found.");
     }
-
-
-    //Shortens text so it fits inside the task table.
-    //<param name="value">The text to shorten.</param>
-    //<param name="max">The maximum length.</param>
-    //<returns>The original or shortened text.</returns>
+    
+    /// Shortens a value so titles and project names fit within the task table columns.
+    /// PrintTasks calls this helper for each displayed title and project, so it may run
+    /// several times during every task-list or edit-screen display.
+    /// <param name="value">The text to shorten.</param>
+    /// <param name="max">The maximum permitted length.</param>
+    /// <returns>The original value or a shortened value with an ellipsis.</returns>
     private static string Shorten(string value, int max)
     {
         if (value.Length <= max) return value;
         return value[..(max - 1)] + "…";
     }
 
-
-    //Allows the user to create a new task.
-    //Entering 0 at any input step cancels the operation.
+    /// Collects input and creates a new task in the current task list.
+    /// Start calls this method whenever the user selects Add New Task, so it may run
+    /// multiple times during a session and once for each add attempt.
     private static void AddTask()
     {
         Console.WriteLine("");
@@ -172,9 +185,10 @@ public static class ApplicationUi
         WriteLineInColor(ConsoleColor.Green, "Task added successfully");
         Pause();
     }
-
-
-    //Allows the user to update, complete, or remove a task.
+    
+    /// Displays the task-selection and action menu for updating, completing, or removing a task.
+    /// Start calls this method whenever the user selects Edit Task, so it may run multiple
+    /// times during a session and once for each edit attempt.
     private static void EditTask()
     {
         Console.WriteLine("");
@@ -231,8 +245,10 @@ public static class ApplicationUi
         }
     }
 
-    //Changes a task between completed and not completed.
-    //<param name="task">The task whose status should change.</param>
+    /// Toggles the selected task between completed and incomplete states.
+    /// EditTask calls this method when the user chooses the status action, so it runs
+    /// once for each status-change request.
+    /// <param name="task">The task whose completion status should change.</param>
     private static void ToggleTaskStatus(Task task)
     {
         task.IsDone = !task.IsDone;
@@ -243,10 +259,11 @@ public static class ApplicationUi
         WriteLineInColor(ConsoleColor.Green, message);
         Pause();
     }
-
-
-    //Updates the title, project and due date of a task.
-    //<param name="task">The task to update.</param>
+    
+    /// Reads replacement values and updates a selected task's title, project, and due date.
+    /// EditTask calls this method when the user chooses Update Task, so it runs once
+    /// for each update attempt and may be cancelled before all fields are changed.
+    /// <param name="task">The task to update.</param>
     private static void UpdateTask(Task task)
     {
         Console.WriteLine("");
@@ -290,10 +307,11 @@ public static class ApplicationUi
         WriteLineInColor(ConsoleColor.Green, "Task updated.");
         Pause();
     }
-
-
-    //Removes the selected task from the task list.
-    //<param name="task">The task to remove.</param>
+    
+    /// Confirms and removes a selected task from the current task list.
+    /// EditTask calls this method when the user chooses Remove Task, so it runs once
+    /// for each removal attempt.
+    /// <param name="task">The task to remove if the user confirms.</param>
     private static void RemoveTask(Task task)
     {
         WriteLineInColor(ConsoleColor.Yellow, "WARNING: You are about to delete a task.");
@@ -309,13 +327,11 @@ public static class ApplicationUi
         
         Pause();
     }
-
-
-    //Reads and validates a task number.
-    //Entering 0 cancels the operation.
-    //<returns>
-    //The zero-based task index, or null when cancelled.
-    //</returns>
+    
+    /// Reads and validates a one-based task number entered in the edit workflow.
+    /// EditTask calls this method once per edit attempt; it may repeat input prompts
+    /// until a valid task number is entered or the user cancels with 0.
+    /// <returns>The zero-based task index, or null when the operation is cancelled.</returns>
     private static int? ReadTaskIndexOrCancel()
     {
         while (true)
@@ -333,11 +349,11 @@ public static class ApplicationUi
         }
     }
 
-
-    //Reads a required value from the user.
-    //Entering 0 cancels the operation.
-    //<param name="prompt">The prompt shown to the user.</param>
-    //<returns>The entered value, or null when cancelled.</returns>
+    /// Reads a non-empty required value during task creation.
+    /// AddTask calls this method once for each add attempt, and it repeats the prompt
+    /// until valid text is entered or the user cancels with 0.
+    /// <param name="prompt">The prompt shown to the user.</param>
+    /// <returns>The entered value, or null when the operation is cancelled.</returns>
     private static string? ReadRequiredOrCancel(string prompt)
     {
         while (true)
@@ -351,12 +367,11 @@ public static class ApplicationUi
             WriteLineInColor(ConsoleColor.Red, "This field is required. Enter 0 to cancel.");
         }
     }
-
-
-    //Reads an optional value from the user.
-    //Entering 0 cancels the operation.
-    //<param name="prompt">The prompt shown to the user.</param>
-    //<returns>The entered value, or null when cancelled.</returns>
+    
+    /// Reads an optional value during task creation while supporting cancellation.
+    /// AddTask calls this method once per add attempt for the project field.
+    /// <param name="prompt">The prompt shown to the user.</param>
+    /// <returns>The entered value, including an empty value, or null when cancelled.</returns>
     private static string? ReadOptionalOrCancel(string prompt)
     {
         Console.Write(prompt);
@@ -365,12 +380,12 @@ public static class ApplicationUi
         if (value == "0") return null;
         return value;
     }
-
-
-    //Reads and validates a date from the user.
-    //Entering 0 cancels the operation.
-    //<param name="prompt">The prompt shown to the user.</param>
-    //<returns>The parsed date, or null when cancelled.</returns>
+    
+    /// Reads and validates a due date during task creation.
+    /// AddTask calls this method once per add attempt, and it repeats the prompt
+    /// until a valid date is entered or the user cancels with 0.
+    /// <param name="prompt">The prompt shown to the user.</param>
+    /// <returns>The date without a time component, or null when cancelled.</returns>
     private static DateTime? ReadDateOrCancel(string prompt)
     {
         while (true)
@@ -385,11 +400,10 @@ public static class ApplicationUi
         }
     }
 
-
-    // Asks user to confirm exit without saving.
-    // <returns>
-    // True if user confirms exit else false.
-    // </returns>
+    /// Asks the user to confirm leaving the application without saving changes.
+    /// Start calls this method whenever the user selects Exit without Saving,
+    /// so it runs once for each such exit attempt.
+    /// <returns>True when the user confirms the exit; otherwise, false.</returns>
     private static bool ExitWithoutSaving()
     {
         WriteLineInColor(ConsoleColor.Yellow, "WARNING: Any changes made since the last save will be lost.");
@@ -405,17 +419,19 @@ public static class ApplicationUi
 
         return false;
     }
-
-
-    // Displays invalid menu option.
+    
+    /// Displays an error and pauses after an invalid menu or action selection.
+    /// It is called whenever user input does not match an available option,
+    /// so it may run any number of times during a session.
     private static void DisplayInvalidOption()
     {
         WriteLineInColor(ConsoleColor.Red, "Invalid option. Please try again.");
         Pause();
     }
-
-
-    //Pauses the application until the user presses Enter.
+    
+    /// Pauses the console until the user presses Enter so feedback can be read.
+    /// It is called after completed actions and validation errors, so it may run
+    /// multiple times during each application session.
     private static void Pause()
     {
         Console.WriteLine();
@@ -423,8 +439,11 @@ public static class ApplicationUi
         Console.ReadLine();
     }
 
-
-    // Writes on console a specified text with a specified color. Resets color when done.
+    /// Writes a line in the requested console color and then restores the default color.
+    /// It is used throughout the UI for status, warning, error, and informational messages,
+    /// so it may run many times during every application session.
+    /// <param name="color">The color to use while writing the message.</param>
+    /// <param name="text">The message to write.</param>
     public static void WriteLineInColor(ConsoleColor color, string text)
     {
         Console.ForegroundColor = color;
@@ -432,16 +451,21 @@ public static class ApplicationUi
         Console.ResetColor();
     }
 
-    // Writes on console a specified text with a specified color. Resets color when done.
+    /// Writes text in the requested console color without adding a new line.
+    /// It is used by the header and colored prompts, so it may run several times
+    /// during startup and whenever those UI elements are rendered.
+    /// <param name="color">The color to use while writing the text.</param>
+    /// <param name="text">The text to write.</param>
     public static void WriteInColor(ConsoleColor color, string text)
     {
         Console.ForegroundColor = color;
         Console.Write(text);
         Console.ResetColor();
     }
-
-
-    //Displays the application header and task statistics.
+    
+    /// Displays the application's branded banner at startup before the main menu is shown.
+    /// Start calls this method once at the beginning of each application session,
+    /// and it can be reused later if the UI gains a screen-refresh workflow.
     private static void DisplayHeader()
     {
         Console.WriteLine("***************************************************");
