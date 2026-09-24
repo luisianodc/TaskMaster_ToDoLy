@@ -15,3 +15,13 @@ internal static class Program
         ApplicationUi.Start();
     }
 }
+
+/**
+ Below is the text or prompt used in the github copilot
+ to generate documentation comments:
+ add few rows of documentation comment describing what 
+ this class does and where and how often in the application 
+ this class is used. generate documentation comments for 
+ all the functions and methods in this class, where th will 
+ be used in the application and how often
+*/
