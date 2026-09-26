@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TaskMaster Unit Test Results</title>
+<style>
+
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                margin: 0;
+                padding: 30px;
+                font-family: Arial, sans-serif;
+                background: linear-gradient(
+                    135deg,
+                    #141e30,
+                    #243b55
+                );
+                color: white;
+            }
+
+            .container {
+                max-width: 1200px;
+                margin: auto;
+            }
+
+            h1 {
+                text-align: center;
+                margin-bottom: 40px;
+                font-size: 42px;
+            }
+
+            .test-card {
+                background: white;
+                color: #222;
+                margin-bottom: 25px;
+                padding: 25px;
+                border-radius: 15px;
+                box-shadow:
+                    0 10px 25px rgba(0,0,0,0.25);
+                transition:
+                    transform 0.25s ease,
+                    box-shadow 0.25s ease;
+            }
+
+            .test-card:hover {
+                transform: translateY(-5px);
+                box-shadow:
+                    0 15px 35px rgba(0,0,0,0.35);
+            }
+
+            .pass {
+                border-left: 10px solid #2ecc71;
+            }
+
+            .fail {
+                border-left: 10px solid #e74c3c;
+            }
+
+            .status {
+                display: inline-block;
+                padding: 8px 16px;
+                border-radius: 20px;
+                font-weight: bold;
+                color: white;
+                margin-bottom: 10px;
+            }
+
+            .pass .status {
+                background: #2ecc71;
+            }
+
+            .fail .status {
+                background: #e74c3c;
+            }
+
+            h2 {
+                margin: 5px 0;
+            }
+
+            h3 {
+                color: #666;
+            }
+
+            .data-container {
+                display: grid;
+                grid-template-columns:
+                    1fr 1fr;
+                gap: 20px;
+            }
+
+            .data-box {
+                border-radius: 10px;
+                overflow: hidden;
+            }
+
+            .input-box {
+                background: #eef6ff;
+            }
+
+            .output-box {
+                background: #f4f4f4;
+            }
+
+            .data-title {
+                padding: 12px;
+                font-weight: bold;
+                background:
+                    rgba(0,0,0,0.08);
+            }
+
+            pre {
+                margin: 0;
+                padding: 15px;
+                white-space: pre-wrap;
+                word-wrap: break-word;
+                font-family: Consolas, monospace;
+                max-height: 350px;
+                overflow-y: auto;
+            }
+
+            .summary {
+                margin-top: 40px;
+                padding: 30px;
+                background: white;
+                color: #222;
+                border-radius: 15px;
+                text-align: center;
+                box-shadow:
+                    0 10px 25px rgba(0,0,0,0.25);
+            }
+
+            .summary-number {
+                font-size: 40px;
+                font-weight: bold;
+            }
+
+            @media (max-width: 800px) {
+                .data-container {
+                    grid-template-columns: 1fr;
+                }
+
+                body {
+                    padding: 15px;
+                }
+
+                h1 {
+                    font-size: 30px;
+                }
+            }
+        
+</style>
+</head>
+<body>
+<div class="container">
+<h1>TaskMaster ToDoLy - Unit Test Results</h1>
+<section class="test-card pass">
+<div class="status">PASS</div>
+<h2>Add Task</h2>
+<h3>Valid input</h3>
+<div class="data-container">
+<div class="data-box input-box">
+<div class="data-title">TESTING INPUT DATA</div>
+<pre>2
+Unit Test Task
+Testing
+2030-01-01
+
+4
+</pre>
+</div>
+<div class="data-box output-box">
+<div class="data-title">TESTING OUTPUT DATA</div>
+<pre>***************************************************
+*********  TASKMASTER *********** TODOLY **********
+***************************************************
+No saved list found. Created a sample list of tasks.
+
+(1) Show Task List
+(2) Add New Task
+(3) Edit Task (update, mark as done, remove)
+(4) Save and Exit
+(5) Exit without Saving
+(6) Unit Testing
+ENTER A NUMBER FROM 1 TO 5
+===&gt; : 
+Add New Task
+Enter 0 at any step to cancel and return to the main menu.
+
+Title: Project (optional): Due date (yyyy-MM-dd): Task added successfully
+
+Press Enter to continue...
+
+(1) Show Task List
+(2) Add New Task
+(3) Edit Task (update, mark as done, remove)
+(4) Save and Exit
+(5) Exit without Saving
+(6) Unit Testing
+ENTER A NUMBER FROM 1 TO 5
+===&gt; : Your To-Do list has been saved.
+Exiting...
+</pre>
+</div>
+</div>
+</section>
+<section class="test-card pass">
+<div class="status">PASS</div>
+<h2>Add Task</h2>
+<h3>Invalid input</h3>
+<div class="data-container">
+<div class="data-box input-box">
+<div class="data-title">TESTING INPUT DATA</div>
+<pre>2
+
+0
+4
+</pre>
+</div>
+<div class="data-box output-box">
+<div class="data-title">TESTING OUTPUT DATA</div>
+<pre>***************************************************
+*********  TASKMASTER *********** TODOLY **********
+***************************************************
+No saved list found. Created a sample list of tasks.
+
+(1) Show Task List
+(2) Add New Task
+(3) Edit Task (update, mark as done, remove)
+(4) Save and Exit
+(5) Exit without Saving
+(6) Unit Testing
+ENTER A NUMBER FROM 1 TO 5
+===&gt; : 
+Add New Task
+Enter 0 at any step to cancel and return to the main menu.
+
+Title: This field is required. Enter 0 to cancel.
+Title: 
+(1) Show Task List
+(2) Add New Task
+(3) Edit Task (update, mark as done, remove)
+(4) Save and Exit
+(5) Exit without Saving
+(6) Unit Testing
+ENTER A NUMBER FROM 1 TO 5
+===&gt; : Your To-Do list has been saved.
+Exiting...
+</pre>
+</div>
+</div>
+</section>
+<section class="test-card pass">
+<div class="status">PASS</div>
+<h2>Edit Task - Update</h2>
+<h3>Valid input</h3>
+<div class="data-container">
+<div class="data-box input-box">
+<div class="data-title">TESTING INPUT DATA</div>
+<pre>3
+1
+1
+Updated Task
+Updated Project
+2030-02-02
+
+4
+</pre>
+</div>
+<div class="data-box output-box">
+<div class="data-title">TESTING OUTPUT DATA</div>
+<pre>***************************************************
+*********  TASKMASTER *********** TODOLY **********
+***************************************************
+No saved list found. Created a sample list of tasks.
+
+(1) Show Task List
+(2) Add New Task
+(3) Edit Task (update, mark as done, remove)
+(4) Save and Exit
+(5) Exit without Saving
+(6) Unit Testing
+ENTER A NUMBER FROM 1 TO 5
+===&gt; : 
+Edit task
+Edit Task
+Enter 0 to return to the main menu.
+
+
+--------------------------------------------------------------------------------
+#    Title                     Due Date         Project        Status    
+--------------------------------------------------------------------------------
+1    Mini Project              2026-02-16       C# .NET        DONE      
+2    Do dishes                 2026-02-20       Chores         TODO      
+3    Take out trash            2026-02-22       Chores         DONE      
+4    Individual Project        2026-02-22       C# .NET        DONE      
+5    HTML &amp; CSS                2026-02-25       C# .NET        TODO      
+6    Read a book               2026-03-25       Personal       TODO      
+Enter task number (0 to cancel): 
+Selected: Do dishes
+(1) Update task
+(2) Mark as done / undone
+(3) Remove task
+(0) Cancel and return to Main Menu
+
+===&gt; : 
+Update task
+Press Enter to keep the current value.
+Enter 0 at any step to cancel.
+
+Title [Do dishes]: Project [Chores]: Due date [2026-02-20]: Task updated.
+
+Press Enter to continue...
+
+(1) Show Task List
+(2) Add New Task
+(3) Edit Task (update, mark as done, remove)
+(4) Save and Exit
+(5) Exit without Saving
+(6) Unit Testing
+ENTER A NUMBER FROM 1 TO 5
+===&gt; : Your To-Do list has been saved.
+Exiting...
+</pre>
+</div>
+</div>
+</section>
+<section class="test-card pass">
+<div class="status">PASS</div>
+<h2>Edit Task - Update</h2>
+<h3>Invalid input</h3>
+<div class="data-container">
+<div class="data-box input-box">
+<div class="data-title">TESTING INPUT DATA</div>
+<pre>3
+99
+0
+4
+</pre>
+</div>
+<div class="data-box output-box">
+<div class="data-title">TESTING OUTPUT DATA</div>
+<pre>***************************************************
+*********  TASKMASTER *********** TODOLY **********
+***************************************************
+No saved list found. Created a sample list of tasks.
+
+(1) Show Task List
+(2) Add New Task
+(3) Edit Task (update, mark as done, remove)
+(4) Save and Exit
+(5) Exit without Saving
+(6) Unit Testing
+ENTER A NUMBER FROM 1 TO 5
+===&gt; : 
+Edit task
+Edit Task
+Enter 0 to return to the main menu.
+
+
+--------------------------------------------------------------------------------
+#    Title                     Due Date         Project        Status    
+--------------------------------------------------------------------------------
+1    Mini Project              2026-02-16       C# .NET        DONE      
+2    Do dishes                 2026-02-20       Chores         TODO      
+3    Take out trash            2026-02-22       Chores         DONE      
+4    Individual Project        2026-02-22       C# .NET        DONE      
+5    HTML &amp; CSS                2026-02-25       C# .NET        TODO      
+6    Read a book               2026-03-25       Personal       TODO      
+Enter task number (0 to cancel): Invalid task number. Please try again.
+Enter task number (0 to cancel): 
+(1) Show Task List
+(2) Add New Task
+(3) Edit Task (update, mark as done, remove)
+(4) Save and Exit
+(5) Exit without Saving
+(6) Unit Testing
+ENTER A NUMBER FROM 1 TO 5
+===&gt; : Your To-Do list has been saved.
+Exiting...
+</pre>
+</div>
+</div>
+</section>
+<section class="test-card pass">
+<div class="status">PASS</div>
+<h2>Edit Task - Change Status</h2>
+<h3>Valid input</h3>
+<div class="data-container">
+<div class="data-box input-box">
+<div class="data-title">TESTING INPUT DATA</div>
+<pre>3
+1
+2
+
+4
+</pre>
+</div>
+<div class="data-box output-box">
+<div class="data-title">TESTING OUTPUT DATA</div>
+<pre>***************************************************
+*********  TASKMASTER *********** TODOLY **********
+***************************************************
+No saved list found. Created a sample list of tasks.
+
+(1) Show Task List
+(2) Add New Task
+(3) Edit Task (update, mark as done, remove)
+(4) Save and Exit
+(5) Exit without Saving
+(6) Unit Testing
+ENTER A NUMBER FROM 1 TO 5
+===&gt; : 
+Edit task
+Edit Task
+Enter 0 to return to the main menu.
+
+
+--------------------------------------------------------------------------------
+#    Title                     Due Date         Project        Status    
+--------------------------------------------------------------------------------
+1    Mini Project              2026-02-16       C# .NET        DONE      
+2    Do dishes                 2026-02-20       Chores         TODO      
+3    Take out trash            2026-02-22       Chores         DONE      
+4    Individual Project        2026-02-22       C# .NET        DONE      
+5    HTML &amp; CSS                2026-02-25       C# .NET        TODO      
+6    Read a book               2026-03-25       Personal       TODO      
+Enter task number (0 to cancel): 
+Selected: Do dishes
+(1) Update task
+(2) Mark as done / undone
+(3) Remove task
+(0) Cancel and return to Main Menu
+
+===&gt; : Task marked as done.
+
+Press Enter to continue...
+
+(1) Show Task List
+(2) Add New Task
+(3) Edit Task (update, mark as done, remove)
+(4) Save and Exit
+(5) Exit without Saving
+(6) Unit Testing
+ENTER A NUMBER FROM 1 TO 5
+===&gt; : Your To-Do list has been saved.
+Exiting...
+</pre>
+</div>
+</div>
+</section>
+<section class="test-card pass">
+<div class="status">PASS</div>
+<h2>Edit Task - Change Status</h2>
+<h3>Invalid input</h3>
+<div class="data-container">
+<div class="data-box input-box">
+<div class="data-title">TESTING INPUT DATA</div>
+<pre>3
+99
+0
+4
+</pre>
+</div>
+<div class="data-box output-box">
+<div class="data-title">TESTING OUTPUT DATA</div>
+<pre>***************************************************
+*********  TASKMASTER *********** TODOLY **********
+***************************************************
+No saved list found. Created a sample list of tasks.
+
+(1) Show Task List
+(2) Add New Task
+(3) Edit Task (update, mark as done, remove)
+(4) Save and Exit
+(5) Exit without Saving
+(6) Unit Testing
+ENTER A NUMBER FROM 1 TO 5
+===&gt; : 
+Edit task
+Edit Task
+Enter 0 to return to the main menu.
+
+
+--------------------------------------------------------------------------------
+#    Title                     Due Date         Project        Status    
+--------------------------------------------------------------------------------
+1    Mini Project              2026-02-16       C# .NET        DONE      
+2    Do dishes                 2026-02-20       Chores         TODO      
+3    Take out trash            2026-02-22       Chores         DONE      
+4    Individual Project        2026-02-22       C# .NET        DONE      
+5    HTML &amp; CSS                2026-02-25       C# .NET        TODO      
+6    Read a book               2026-03-25       Personal       TODO      
+Enter task number (0 to cancel): Invalid task number. Please try again.
+Enter task number (0 to cancel): 
+(1) Show Task List
+(2) Add New Task
+(3) Edit Task (update, mark as done, remove)
+(4) Save and Exit
+(5) Exit without Saving
+(6) Unit Testing
+ENTER A NUMBER FROM 1 TO 5
+===&gt; : Your To-Do list has been saved.
+Exiting...
+</pre>
+</div>
+</div>
+</section>
+<section class="test-card fail">
+<div class="status">FAIL</div>
+<h2>Edit Task - Remove</h2>
+<h3>Valid input</h3>
+<div class="data-container">
+<div class="data-box input-box">
+<div class="data-title">TESTING INPUT DATA</div>
+<pre>3
+1
+3
+y
+
+4
+</pre>
+</div>
+<div class="data-box output-box">
+<div class="data-title">TESTING OUTPUT DATA</div>
+<pre>***************************************************
+*********  TASKMASTER *********** TODOLY **********
+***************************************************
+No saved list found. Created a sample list of tasks.
+
+(1) Show Task List
+(2) Add New Task
+(3) Edit Task (update, mark as done, remove)
+(4) Save and Exit
+(5) Exit without Saving
+(6) Unit Testing
+ENTER A NUMBER FROM 1 TO 5
+===&gt; : 
+Edit task
+Edit Task
+Enter 0 to return to the main menu.
+
+
+--------------------------------------------------------------------------------
+#    Title                     Due Date         Project        Status    
+--------------------------------------------------------------------------------
+1    Mini Project              2026-02-16       C# .NET        DONE      
+2    Do dishes                 2026-02-20       Chores         TODO      
+3    Take out trash            2026-02-22       Chores         DONE      
+4    Individual Project        2026-02-22       C# .NET        DONE      
+5    HTML &amp; CSS                2026-02-25       C# .NET        TODO      
+6    Read a book               2026-03-25       Personal       TODO      
+Enter task number (0 to cancel): 
+Selected: Do dishes
+(1) Update task
+(2) Mark as done / undone
+(3) Remove task
+(0) Cancel and return to Main Menu
+
+===&gt; : WARNING: You are about to delete a task.
+Are you sure you want to delete this task (y/n): 
+Task removed.
+
+Press Enter to continue...
+
+(1) Show Task List
+(2) Add New Task
+(3) Edit Task (update, mark as done, remove)
+(4) Save and Exit
+(5) Exit without Saving
+(6) Unit Testing
+ENTER A NUMBER FROM 1 TO 5
+===&gt; : Your To-Do list has been saved.
+Exiting...
+</pre>
+</div>
+</div>
+</section>
+<section class="test-card fail">
+<div class="status">FAIL</div>
+<h2>Edit Task - Remove</h2>
+<h3>Invalid input</h3>
+<div class="data-container">
+<div class="data-box input-box">
+<div class="data-title">TESTING INPUT DATA</div>
+<pre>3
+99
+0
+4
+</pre>
+</div>
+<div class="data-box output-box">
+<div class="data-title">TESTING OUTPUT DATA</div>
+<pre>***************************************************
+*********  TASKMASTER *********** TODOLY **********
+***************************************************
+No saved list found. Created a sample list of tasks.
+
+(1) Show Task List
+(2) Add New Task
+(3) Edit Task (update, mark as done, remove)
+(4) Save and Exit
+(5) Exit without Saving
+(6) Unit Testing
+ENTER A NUMBER FROM 1 TO 5
+===&gt; : 
+Edit task
+Edit Task
+Enter 0 to return to the main menu.
+
+
+--------------------------------------------------------------------------------
+#    Title                     Due Date         Project        Status    
+--------------------------------------------------------------------------------
+1    Mini Project              2026-02-16       C# .NET        DONE      
+2    Do dishes                 2026-02-20       Chores         TODO      
+3    Take out trash            2026-02-22       Chores         DONE      
+4    Individual Project        2026-02-22       C# .NET        DONE      
+5    HTML &amp; CSS                2026-02-25       C# .NET        TODO      
+6    Read a book               2026-03-25       Personal       TODO      
+Enter task number (0 to cancel): Invalid task number. Please try again.
+Enter task number (0 to cancel): 
+(1) Show Task List
+(2) Add New Task
+(3) Edit Task (update, mark as done, remove)
+(4) Save and Exit
+(5) Exit without Saving
+(6) Unit Testing
+ENTER A NUMBER FROM 1 TO 5
+===&gt; : Your To-Do list has been saved.
+Exiting...
+</pre>
+</div>
+</div>
+</section>
+<section class="test-card pass">
+<div class="status">PASS</div>
+<h2>Show Task List</h2>
+<h3>Valid input</h3>
+<div class="data-container">
+<div class="data-box input-box">
+<div class="data-title">TESTING INPUT DATA</div>
+<pre>1
+1
+
+4
+</pre>
+</div>
+<div class="data-box output-box">
+<div class="data-title">TESTING OUTPUT DATA</div>
+<pre>***************************************************
+*********  TASKMASTER *********** TODOLY **********
+***************************************************
+No saved list found. Created a sample list of tasks.
+
+(1) Show Task List
+(2) Add New Task
+(3) Edit Task (update, mark as done, remove)
+(4) Save and Exit
+(5) Exit without Saving
+(6) Unit Testing
+ENTER A NUMBER FROM 1 TO 5
+===&gt; : 
+Show task list
+(1) Sort by date
+(2) Sort by project
+(0) Back to Main Menu
+
+===&gt; : 
+
+--------------------------------------------------------------------------------
+#    Title                     Due Date         Project        Status    
+--------------------------------------------------------------------------------
+1    Mini Project              2026-02-16       C# .NET        DONE      
+2    Do dishes                 2026-02-20       Chores         TODO      
+3    Take out trash            2026-02-22       Chores         DONE      
+4    Individual Project        2026-02-22       C# .NET        DONE      
+5    HTML &amp; CSS                2026-02-25       C# .NET        TODO      
+6    Read a book               2026-03-25       Personal       TODO      
+
+Press Enter to continue...
+
+(1) Show Task List
+(2) Add New Task
+(3) Edit Task (update, mark as done, remove)
+(4) Save and Exit
+(5) Exit without Saving
+(6) Unit Testing
+ENTER A NUMBER FROM 1 TO 5
+===&gt; : Your To-Do list has been saved.
+Exiting...
+</pre>
+</div>
+</div>
+</section>
+<section class="test-card pass">
+<div class="status">PASS</div>
+<h2>Show Task List</h2>
+<h3>Invalid input</h3>
+<div class="data-container">
+<div class="data-box input-box">
+<div class="data-title">TESTING INPUT DATA</div>
+<pre>1
+99
+
+0
+4
+</pre>
+</div>
+<div class="data-box output-box">
+<div class="data-title">TESTING OUTPUT DATA</div>
+<pre>***************************************************
+*********  TASKMASTER *********** TODOLY **********
+***************************************************
+No saved list found. Created a sample list of tasks.
+
+(1) Show Task List
+(2) Add New Task
+(3) Edit Task (update, mark as done, remove)
+(4) Save and Exit
+(5) Exit without Saving
+(6) Unit Testing
+ENTER A NUMBER FROM 1 TO 5
+===&gt; : 
+Show task list
+(1) Sort by date
+(2) Sort by project
+(0) Back to Main Menu
+
+===&gt; : Invalid option. Please try again.
+
+Press Enter to continue...
+
+Show task list
+(1) Sort by date
+(2) Sort by project
+(0) Back to Main Menu
+
+===&gt; : 
+(1) Show Task List
+(2) Add New Task
+(3) Edit Task (update, mark as done, remove)
+(4) Save and Exit
+(5) Exit without Saving
+(6) Unit Testing
+ENTER A NUMBER FROM 1 TO 5
+===&gt; : Your To-Do list has been saved.
+Exiting...
+</pre>
+</div>
+</div>
+</section>
+<section class="test-card pass">
+<div class="status">PASS</div>
+<h2>Exit With Saving</h2>
+<h3>Valid input</h3>
+<div class="data-container">
+<div class="data-box input-box">
+<div class="data-title">TESTING INPUT DATA</div>
+<pre>4
+</pre>
+</div>
+<div class="data-box output-box">
+<div class="data-title">TESTING OUTPUT DATA</div>
+<pre>***************************************************
+*********  TASKMASTER *********** TODOLY **********
+***************************************************
+No saved list found. Created a sample list of tasks.
+
+(1) Show Task List
+(2) Add New Task
+(3) Edit Task (update, mark as done, remove)
+(4) Save and Exit
+(5) Exit without Saving
+(6) Unit Testing
+ENTER A NUMBER FROM 1 TO 5
+===&gt; : Your To-Do list has been saved.
+Exiting...
+</pre>
+</div>
+</div>
+</section>
+<section class="test-card pass">
+<div class="status">PASS</div>
+<h2>Exit With Saving</h2>
+<h3>Invalid input</h3>
+<div class="data-container">
+<div class="data-box input-box">
+<div class="data-title">TESTING INPUT DATA</div>
+<pre>99
+
+4
+</pre>
+</div>
+<div class="data-box output-box">
+<div class="data-title">TESTING OUTPUT DATA</div>
+<pre>***************************************************
+*********  TASKMASTER *********** TODOLY **********
+***************************************************
+No saved list found. Created a sample list of tasks.
+
+(1) Show Task List
+(2) Add New Task
+(3) Edit Task (update, mark as done, remove)
+(4) Save and Exit
+(5) Exit without Saving
+(6) Unit Testing
+ENTER A NUMBER FROM 1 TO 5
+===&gt; : Invalid option. Please try again.
+
+Press Enter to continue...
+
+(1) Show Task List
+(2) Add New Task
+(3) Edit Task (update, mark as done, remove)
+(4) Save and Exit
+(5) Exit without Saving
+(6) Unit Testing
+ENTER A NUMBER FROM 1 TO 5
+===&gt; : Your To-Do list has been saved.
+Exiting...
+</pre>
+</div>
+</div>
+</section>
+<section class="test-card pass">
+<div class="status">PASS</div>
+<h2>Exit Without Saving</h2>
+<h3>Valid input</h3>
+<div class="data-container">
+<div class="data-box input-box">
+<div class="data-title">TESTING INPUT DATA</div>
+<pre>5
+y
+</pre>
+</div>
+<div class="data-box output-box">
+<div class="data-title">TESTING OUTPUT DATA</div>
+<pre>***************************************************
+*********  TASKMASTER *********** TODOLY **********
+***************************************************
+No saved list found. Created a sample list of tasks.
+
+(1) Show Task List
+(2) Add New Task
+(3) Edit Task (update, mark as done, remove)
+(4) Save and Exit
+(5) Exit without Saving
+(6) Unit Testing
+ENTER A NUMBER FROM 1 TO 5
+===&gt; : WARNING: Any changes made since the last save will be lost.
+Are you sure you want to exit without saving? (y/n): 
+GOODBYE!
+</pre>
+</div>
+</div>
+</section>
+<section class="test-card pass">
+<div class="status">PASS</div>
+<h2>Exit Without Saving</h2>
+<h3>Invalid confirmation</h3>
+<div class="data-container">
+<div class="data-box input-box">
+<div class="data-title">TESTING INPUT DATA</div>
+<pre>5
+x
+4
+</pre>
+</div>
+<div class="data-box output-box">
+<div class="data-title">TESTING OUTPUT DATA</div>
+<pre>***************************************************
+*********  TASKMASTER *********** TODOLY **********
+***************************************************
+No saved list found. Created a sample list of tasks.
+
+(1) Show Task List
+(2) Add New Task
+(3) Edit Task (update, mark as done, remove)
+(4) Save and Exit
+(5) Exit without Saving
+(6) Unit Testing
+ENTER A NUMBER FROM 1 TO 5
+===&gt; : WARNING: Any changes made since the last save will be lost.
+Are you sure you want to exit without saving? (y/n): 
+
+(1) Show Task List
+(2) Add New Task
+(3) Edit Task (update, mark as done, remove)
+(4) Save and Exit
+(5) Exit without Saving
+(6) Unit Testing
+ENTER A NUMBER FROM 1 TO 5
+===&gt; : Your To-Do list has been saved.
+Exiting...
+</pre>
+</div>
+</div>
+</section>
+<section class="test-card pass">
+<div class="status">PASS</div>
+<h2>ApplicationUi.cs</h2>
+<h3>Main menu is displayed</h3>
+<div class="data-container">
+<div class="data-box input-box">
+<div class="data-title">TESTING INPUT DATA</div>
+<pre>4
+</pre>
+</div>
+<div class="data-box output-box">
+<div class="data-title">TESTING OUTPUT DATA</div>
+<pre>***************************************************
+*********  TASKMASTER *********** TODOLY **********
+***************************************************
+No saved list found. Created a sample list of tasks.
+
+(1) Show Task List
+(2) Add New Task
+(3) Edit Task (update, mark as done, remove)
+(4) Save and Exit
+(5) Exit without Saving
+(6) Unit Testing
+ENTER A NUMBER FROM 1 TO 5
+===&gt; : Your To-Do list has been saved.
+Exiting...
+</pre>
+</div>
+</div>
+</section>
+<section class="test-card pass">
+<div class="status">PASS</div>
+<h2>ApplicationUi.cs</h2>
+<h3>Invalid menu option is handled</h3>
+<div class="data-container">
+<div class="data-box input-box">
+<div class="data-title">TESTING INPUT DATA</div>
+<pre>99
+
+4
+</pre>
+</div>
+<div class="data-box output-box">
+<div class="data-title">TESTING OUTPUT DATA</div>
+<pre>***************************************************
+*********  TASKMASTER *********** TODOLY **********
+***************************************************
+No saved list found. Created a sample list of tasks.
+
+(1) Show Task List
+(2) Add New Task
+(3) Edit Task (update, mark as done, remove)
+(4) Save and Exit
+(5) Exit without Saving
+(6) Unit Testing
+ENTER A NUMBER FROM 1 TO 5
+===&gt; : Invalid option. Please try again.
+
+Press Enter to continue...
+
+(1) Show Task List
+(2) Add New Task
+(3) Edit Task (update, mark as done, remove)
+(4) Save and Exit
+(5) Exit without Saving
+(6) Unit Testing
+ENTER A NUMBER FROM 1 TO 5
+===&gt; : Your To-Do list has been saved.
+Exiting...
+</pre>
+</div>
+</div>
+</section>
+<section class="test-card pass">
+<div class="status">PASS</div>
+<h2>ApplicationUi.cs</h2>
+<h3>Add task through user interface</h3>
+<div class="data-container">
+<div class="data-box input-box">
+<div class="data-title">TESTING INPUT DATA</div>
+<pre>2
+Application UI Test
+UI Testing
+2030-05-05
+
+4
+</pre>
+</div>
+<div class="data-box output-box">
+<div class="data-title">TESTING OUTPUT DATA</div>
+<pre>***************************************************
+*********  TASKMASTER *********** TODOLY **********
+***************************************************
+No saved list found. Created a sample list of tasks.
+
+(1) Show Task List
+(2) Add New Task
+(3) Edit Task (update, mark as done, remove)
+(4) Save and Exit
+(5) Exit without Saving
+(6) Unit Testing
+ENTER A NUMBER FROM 1 TO 5
+===&gt; : 
+Add New Task
+Enter 0 at any step to cancel and return to the main menu.
+
+Title: Project (optional): Due date (yyyy-MM-dd): Task added successfully
+
+Press Enter to continue...
+
+(1) Show Task List
+(2) Add New Task
+(3) Edit Task (update, mark as done, remove)
+(4) Save and Exit
+(5) Exit without Saving
+(6) Unit Testing
+ENTER A NUMBER FROM 1 TO 5
+===&gt; : Your To-Do list has been saved.
+Exiting...
+</pre>
+</div>
+</div>
+</section>
+<section class="test-card pass">
+<div class="status">PASS</div>
+<h2>FileHandler.cs</h2>
+<h3>Save creates JSON file</h3>
+<div class="data-container">
+<div class="data-box input-box">
+<div class="data-title">TESTING INPUT DATA</div>
+<pre>Direct FileHandler.Save()</pre>
+</div>
+<div class="data-box output-box">
+<div class="data-title">TESTING OUTPUT DATA</div>
+<pre>File exists: True
+File path: C:\Users\DenovanCalill\RiderProjects\TaskMaster_ToDoLy\TaskMaster_ToDoLy\bin\Debug\net10.0\ToDoList.json</pre>
+</div>
+</div>
+</section>
+<section class="test-card pass">
+<div class="status">PASS</div>
+<h2>FileHandler.cs</h2>
+<h3>Open loads saved tasks</h3>
+<div class="data-container">
+<div class="data-box input-box">
+<div class="data-title">TESTING INPUT DATA</div>
+<pre>Direct FileHandler.Open()
+Expected task: File Test Task</pre>
+</div>
+<div class="data-box output-box">
+<div class="data-title">TESTING OUTPUT DATA</div>
+<pre>Tasks loaded: 1
+Title: File Test Task
+Project: File Testing
+Due Date: 2030-06-06
+</pre>
+</div>
+</div>
+</section>
+<section class="test-card pass">
+<div class="status">PASS</div>
+<h2>FileHandler.cs</h2>
+<h3>Open handles missing save file</h3>
+<div class="data-container">
+<div class="data-box input-box">
+<div class="data-title">TESTING INPUT DATA</div>
+<pre>Delete ToDoList.json
+Call FileHandler.Open()</pre>
+</div>
+<div class="data-box output-box">
+<div class="data-title">TESTING OUTPUT DATA</div>
+<pre>File exists: False
+Tasks created: 6</pre>
+</div>
+</div>
+</section>
+<section class="test-card pass">
+<div class="status">PASS</div>
+<h2>TaskList.cs</h2>
+<h3>Empty task list</h3>
+<div class="data-container">
+<div class="data-box input-box">
+<div class="data-title">TESTING INPUT DATA</div>
+<pre>TaskList.Tasks = new empty List&lt;Task&gt;()</pre>
+</div>
+<div class="data-box output-box">
+<div class="data-title">TESTING OUTPUT DATA</div>
+<pre>Task count: 0</pre>
+</div>
+</div>
+</section>
+<section class="test-card pass">
+<div class="status">PASS</div>
+<h2>TaskList.cs</h2>
+<h3>Add task to collection</h3>
+<div class="data-container">
+<div class="data-box input-box">
+<div class="data-title">TESTING INPUT DATA</div>
+<pre>Create Task:
+Title: TaskList Test
+Project: Testing
+Due Date: 2030-07-07</pre>
+</div>
+<div class="data-box output-box">
+<div class="data-title">TESTING OUTPUT DATA</div>
+<pre>Task count: 1
+First task title: TaskList Test
+First task project: Testing
+First task due date: 2030-07-07</pre>
+</div>
+</div>
+</section>
+<section class="test-card pass">
+<div class="status">PASS</div>
+<h2>TaskList.cs</h2>
+<h3>Remove task from collection</h3>
+<div class="data-container">
+<div class="data-box input-box">
+<div class="data-title">TESTING INPUT DATA</div>
+<pre>TaskList contains one task.
+Remove the task.</pre>
+</div>
+<div class="data-box output-box">
+<div class="data-title">TESTING OUTPUT DATA</div>
+<pre>Tasks before remove: 1
+Tasks after remove: 0</pre>
+</div>
+</div>
+</section>
+<section class="test-card pass">
+<div class="status">PASS</div>
+<h2>TaskList.cs</h2>
+<h3>Store multiple tasks</h3>
+<div class="data-container">
+<div class="data-box input-box">
+<div class="data-title">TESTING INPUT DATA</div>
+<pre>Add three Task objects to TaskList.Tasks.</pre>
+</div>
+<div class="data-box output-box">
+<div class="data-title">TESTING OUTPUT DATA</div>
+<pre>Task count: 3
+Task One - Project One
+Task Two - Project Two
+Task Three - Project Three
+</pre>
+</div>
+</div>
+</section>
+<section class="test-card pass">
+<div class="status">PASS</div>
+<h2>Task.cs</h2>
+<h3>Create task with valid data</h3>
+<div class="data-container">
+<div class="data-box input-box">
+<div class="data-title">TESTING INPUT DATA</div>
+<pre>Title: Task Class Test
+Project: C# Testing
+Due Date: 2030-09-09
+IsDone: false</pre>
+</div>
+<div class="data-box output-box">
+<div class="data-title">TESTING OUTPUT DATA</div>
+<pre>Title: Task Class Test
+Project: C# Testing
+Due Date: 2030-09-09
+IsDone: False</pre>
+</div>
+</div>
+</section>
+<section class="test-card pass">
+<div class="status">PASS</div>
+<h2>Task.cs</h2>
+<h3>Create completed task</h3>
+<div class="data-container">
+<div class="data-box input-box">
+<div class="data-title">TESTING INPUT DATA</div>
+<pre>Title: Completed Task
+Project: Testing
+Due Date: 2030-10-10
+IsDone: true</pre>
+</div>
+<div class="data-box output-box">
+<div class="data-title">TESTING OUTPUT DATA</div>
+<pre>Title: Completed Task
+Project: Testing
+Due Date: 2030-10-10
+IsDone: True</pre>
+</div>
+</div>
+</section>
+<section class="test-card pass">
+<div class="status">PASS</div>
+<h2>Task.cs</h2>
+<h3>Change task properties</h3>
+<div class="data-container">
+<div class="data-box input-box">
+<div class="data-title">TESTING INPUT DATA</div>
+<pre>Create task.
+Change Title, Project, DueDate and IsDone.</pre>
+</div>
+<div class="data-box output-box">
+<div class="data-title">TESTING OUTPUT DATA</div>
+<pre>Title: Changed Title
+Project: Changed Project
+Due Date: 2030-12-12
+IsDone: True</pre>
+</div>
+</div>
+</section>
+<section class="test-card pass">
+<div class="status">PASS</div>
+<h2>Task.cs</h2>
+<h3>Create empty task</h3>
+<div class="data-container">
+<div class="data-box input-box">
+<div class="data-title">TESTING INPUT DATA</div>
+<pre>new Task()</pre>
+</div>
+<div class="data-box output-box">
+<div class="data-title">TESTING OUTPUT DATA</div>
+<pre>Title: &#39;&#39;
+Project: &#39;&#39;
+Due Date: 0001-01-01
+IsDone: False</pre>
+</div>
+</div>
+</section>
+<div class="summary">
+<h2>Test Summary</h2>
+<div class="summary-number">28</div>
+<p>Tests executed: 28</p>
+<p>Tests passed: 26</p>
+<p>Tests failed: 2</p>
+</div>
+</div>
+</body>
+</html>

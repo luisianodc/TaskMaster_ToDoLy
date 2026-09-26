@@ -34,17 +34,27 @@ public static class FileHandler
     /// Serializes the current task list and writes it to the local JSON save file.
     /// ApplicationUi calls this method when the user selects Save and Exit, so it normally runs
     /// once per saved exit and may run again in future workflows that expose manual saving.
-    public static void Save()
+    public static bool Save()
     {
         try
         {
             var json = JsonSerializer.Serialize(TaskList.Tasks, Options);
+
             File.WriteAllText(FileName, json);
-            ApplicationUi.WriteLineInColor(ConsoleColor.Green, "Your To-Do list has been saved.");
+
+            ApplicationUi.WriteLineInColor(
+                ConsoleColor.Green,
+                "Your To-Do list has been saved.");
+
+            return true;
         }
         catch (Exception ex)
         {
-            ApplicationUi.WriteLineInColor(ConsoleColor.Red, $"Failed to save To-Do list: {ex.Message}");
+            ApplicationUi.WriteLineInColor(
+                ConsoleColor.Red,
+                $"Failed to save To-Do list: {ex.Message}");
+
+            return false;
         }
     }
 

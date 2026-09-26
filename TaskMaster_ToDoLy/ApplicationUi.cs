@@ -4,6 +4,11 @@ namespace TaskMaster_ToDoLy;
 /// Displays tasks, accepts input for adding and editing entries, and confirms save/exit choices.
 /// Validates user actions and keeps the workflow guided for task management operations.
 /// Serves as the main UI layer between the user and the task data model.
+/// Invalid menu choices, task numbers, required fields, and dates are detected before changes are made.
+/// The application responds with a clear error message and asks the user to try the input again.
+/// Users can enter 0 during supported task-entry workflows to cancel without changing the task list.
+/// Confirmation prompts are used before destructive actions, such as deleting tasks or exiting without saving.
+/// This validation keeps invalid input from terminating the console session or corrupting task data.
 public static class ApplicationUi
 {
     /// Starts the main program loop for the TaskMaster ToDoLy console app.
@@ -39,6 +44,10 @@ public static class ApplicationUi
                 case "5":
                     if (ExitWithoutSaving()) return;
                     break;
+                case "6":
+                    //var unitTesting = new UnitTesting();
+                    UnitTesting.Run();
+                    break;
                 default:
                     DisplayInvalidOption();
                     break;
@@ -57,6 +66,7 @@ public static class ApplicationUi
         Console.WriteLine("(3) Edit Task (update, mark as done, remove)");
         Console.WriteLine("(4) Save and Exit");
         Console.WriteLine("(5) Exit without Saving");
+        Console.WriteLine("(6) Unit Testing");
         Console.WriteLine("ENTER A NUMBER FROM 1 TO 5");
         Console.Write("===> : ");
     }
